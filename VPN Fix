@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#This kills the process for the viscosity app in case it is running#
+
+osascript -e 'quit app "viscosity"'
+
+#this force removes the viscosity app and vpn auth app from the applications folder#
+
+sudo rm -rf /Applications/Viscosity.app
+
+sudo rm -rf /Applications/Vpnauth.app
+
+#this removes the application support folder from the current users profile#
+
+sudo rm -rf /Users/$USER/Library/Application\ Support/vpnauthclient
+
+sudo rm -rf /Users/$USER/Library/Application\ Support/Viscosity
+
+#this removes the application support files from the root Library#
+
+ sudo rm -rf /Library/Application\ Support/Viscosity
+
+ #this will remove the prefernce files for visocsity and vpnauth#
+
+ sudo rm -rf /Users/$USER/Library/Preferences/com.viscosityvpn.Viscosity.plist
+
+ sudo rm -rf /Users/$USER/Library/Preferences/net.lyft.vpnauth.plist
+
+ #now you can isntall viscosity again"
+
+exit 0
